@@ -10,10 +10,10 @@ const todoMongo = require('../models/todo');
 //slugger generate
 const slugger = require('../utils/slugger');
 //middlewares
-const userToken = require('../midllewares/usertoken');
+const jwtVerify = require('../midllewares/jwtverify');
 
 /* GET listing all todos */
-router.get('/', userToken,function (req, res) {
+router.get('/', jwtVerify,function (req, res) {
     return res.json('Hi!')
 })
 

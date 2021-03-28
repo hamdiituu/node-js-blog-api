@@ -14,7 +14,8 @@ const jwt = require('jsonwebtoken');
 
 const tokenSecretKey = 'my-secret-key';
 
-router.post('/', function (req, res) {
+router.post('/', function (req, res,next) {
+    //TODO : error email is null property
 
     const {error, value} = userLoginValidate.validate(req.body);
 
@@ -31,9 +32,9 @@ router.post('/', function (req, res) {
     }
 
     const token = jwt.sign({
-        user : user.name,
-        email : user.email,
-    },tokenSecretKey);
+        user: user.name,
+        email: user.email
+    }, tokenSecretKey,{ expiresIn: '20s' });
 
     return res.json(responseModel.success(token));
 

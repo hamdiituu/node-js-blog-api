@@ -16,7 +16,6 @@ const jwtVerify = (req, res, next) => {
             if (error) {
                 return res.status(401).json(responseModel.error(error));
             }
-
             req.user = user;
             next();
         });

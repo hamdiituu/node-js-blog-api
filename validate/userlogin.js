@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
 const userLoginValidate = Joi.object({
+
     email: Joi
         .string()
         .required()
