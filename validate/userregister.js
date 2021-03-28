@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const todoValidate = Joi.object({
+const userRegisterValidate = Joi.object({
     name: Joi
         .string()
         .min(3)
@@ -35,4 +35,4 @@ const todoValidate = Joi.object({
 
 })
 
-module.exports = todoValidate;
+module.exports = userRegisterValidate;

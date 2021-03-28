@@ -1,13 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+//request validate
 const todoValidate = require('../validate/todo');
+//response model
 const responseModel = require('../utils/response');
+//mongo model
 const todoMongo = require('../models/todo');
+//slugger generate
 const slugger = require('../utils/slugger');
+//middlewares
+const userToken = require('../midllewares/usertoken');
 
 /* GET listing all todos */
-router.get('/', function (req, res) {
+router.get('/', userToken,function (req, res) {
     return res.json('Hi!')
 })
 
