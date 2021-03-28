@@ -5,6 +5,8 @@ router.get('/',function (req,res,next) {
     return res.json('Hi!')
 })
 
+router.post('/',function (req,res){
 
+})
 
 module.exports = router;
